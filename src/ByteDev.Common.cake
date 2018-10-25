@@ -56,3 +56,18 @@ void DotNetCoreTests(FilePathCollection projects, DotNetCoreTestSettings setting
 		DotNetCoreTest(project.FullPath, settings);
 	}
 }
+
+void DotNetCoreUnitTests(DotNetCoreTestSettings settings)
+{
+	var projects = GetUnitTestProjFiles();
+
+	DotNetCoreTests(projects, settings);
+}
+
+void DotNetCoreIntTests(DotNetCoreTestSettings settings)
+{
+	var projects = GetIntTestProjFiles();
+
+	DotNetCoreTests(projects, settings);
+}
+
